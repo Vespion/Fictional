@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>$(DotNetVersion)</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\src\data\Core\Core.csproj"/>
+		<ProjectReference Include="..\..\TestUtils\TestUtils.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.10"/>
+	</ItemGroup>
+
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('ProjectProperties.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+</Project>

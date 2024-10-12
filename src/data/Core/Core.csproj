@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>$(DotNetVersion)</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Chorn.EmbeddedResourceAccessGenerator" Version="1.1.5">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.8"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\build\GenUtils\GenUtils.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+	</ItemGroup>
+
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('ProjectProperties.props', '$(MSBuildThisFileDirectory)../'))" />
+	
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>Fictional.TestUtils</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<EmbeddedResource Include="Migrations\**\*.sql"/>
+	</ItemGroup>
+</Project>

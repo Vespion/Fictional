@@ -1,0 +1,18 @@
+﻿<Project>
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<IsPackable>false</IsPackable>
+		<DotNetVersion>netstandard2.0</DotNetVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<_NS>Fictional.Build.$(MSBuildProjectName)</_NS>
+	</PropertyGroup>
+
+	<!--	<ItemGroup>-->
+	<!--		<AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute"/>-->
+	<!--	</ItemGroup>-->
+
+</Project>

@@ -1,0 +1,8 @@
+﻿<Project>
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+	<PropertyGroup>
+		<_NS>Fictional.Data.$(MSBuildProjectName)</_NS>
+	</PropertyGroup>
+
+</Project>

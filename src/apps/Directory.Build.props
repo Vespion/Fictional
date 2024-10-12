@@ -1,0 +1,9 @@
+﻿<Project>
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+	<PropertyGroup>
+		<_NS>Fictional.App.$(MSBuildProjectName)</_NS>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+	</PropertyGroup>
+
+</Project>

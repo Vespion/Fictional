@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>$(DotNetVersion)</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Data\**\Pages\*.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Chorn.EmbeddedResourceAccessGenerator" Version="1.1.5">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\src\plugins\Ao3\Ao3.csproj" />
+	  <ProjectReference Include="..\..\TestUtils\TestUtils.csproj" />
+	</ItemGroup>
+
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('ProjectProperties.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+</Project>

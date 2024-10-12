@@ -1,0 +1,28 @@
+﻿<Project>
+
+	<PropertyGroup>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsDeterministic>true</IsDeterministic>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<DotNetVersion>net8.0</DotNetVersion>
+
+		<NeutralLanguage>en-GB</NeutralLanguage>
+		<Product>Fictional</Product>
+		<Company>Vespion Softworks</Company>
+
+
+		<!-- Required for Hot Reload (See https://github.com/dotnet/sdk/issues/36666) -->
+		<IncludeSourceRevisionInInformationalVersion Condition="'$(Configuration)'=='Debug'">false</IncludeSourceRevisionInInformationalVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<_NS>Fictional.$(MSBuildProjectName)</_NS>
+
+		<VersionPrefix Condition="'$(VersionPrefix)' == ''">0.0.0</VersionPrefix>
+		<VersionSuffix Condition="'$(VersionSuffix)' == ''">dev</VersionSuffix>
+	</PropertyGroup>
+</Project>

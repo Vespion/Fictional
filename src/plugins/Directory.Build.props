@@ -1,0 +1,23 @@
+﻿<Project>
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+	<PropertyGroup>
+		<_NS>Fictional.Plugins.$(MSBuildProjectName)</_NS>
+		<EnableDynamicLoading>true</EnableDynamicLoading>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="$(MSBuildThisFileDirectory)..\data\Core\Core.csproj">
+			<Private>false</Private>
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(MSBuildProjectName)' != 'PluginRuntimeLib'">
+		<ProjectReference Include="$(MSBuildThisFileDirectory)PluginRuntimeLib\PluginRuntimeLib.csproj">
+			<Private>false</Private>
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</ProjectReference>
+	</ItemGroup>
+
+</Project>

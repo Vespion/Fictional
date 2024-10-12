@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>$(DotNetVersion)</TargetFramework>
+		<EnableDynamicLoading>false</EnableDynamicLoading>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="HtmlAgilityPack" Version="1.11.67" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" ExcludeAssets="runtime" />
+	  <PackageReference Include="TurnerSoftware.RobotsExclusionTools" Version="0.9.1" PrivateAssets="runtime" />
+	</ItemGroup>
+
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('ProjectProperties.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+</Project>

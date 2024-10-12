@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>$(DotNetVersion)</TargetFramework>
+		<Title>Fictional CLI</Title>
+		<Description>Command Line Interface for the Fictional project</Description>
+		<OutputFile>fictional-cli</OutputFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\..\..\.dockerignore">
+			<Link>.dockerignore</Link>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0"/>
+		<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1"/>
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3mc" Version="2.1.10"/>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
+		<PackageReference Include="Karambolo.Extensions.Logging.File.Json" Version="3.5.0"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\data\Core\Core.csproj"/>
+		<ProjectReference Include="..\..\plugins\PluginRuntimeLib\PluginRuntimeLib.csproj" />
+	</ItemGroup>
+
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('ProjectProperties.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+</Project>
